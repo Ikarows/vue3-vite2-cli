@@ -1,4 +1,4 @@
-import {createRouter, createWebHistory} from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 // 开启历史模式
 // vue2中使用 mode: history 实现
@@ -13,13 +13,13 @@ const router = createRouter({
     },
     {
       path: '/home',
-      component: () => import('../views/Home'),
-      meta: {title: 'home'}
+      component: () => import('../views/Home.vue'),
+      meta: { title: 'home' }
     },
     {
       path: '/contact',
-      component: () => import('../views/Contact'),
-      meta: {title: 'Contact'}
+      component: () => import('../views/Contact.vue'),
+      meta: { title: 'Contact' }
     }
   ]
 })
