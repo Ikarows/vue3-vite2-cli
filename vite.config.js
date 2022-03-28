@@ -1,6 +1,14 @@
 const path = require('path')
 
+// import.meta.VITE_APP_ENV
 module.exports = {
+  outputDir: 'dist',
+  assetsDir: 'static',
+  productionSourceMap: false,
+  chainWebpack(config) {
+    config.plugins.delete('preload')
+    config.plugins.delete('prefetch')
+  },
   alias: {
     '@': path.resolve(__dirname, './src')
   },
