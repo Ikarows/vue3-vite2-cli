@@ -1,4 +1,6 @@
 const path = require('path')
+import vue from '@vitejs/plugin-vue'
+import styleImport, { VantResolve } from 'vite-plugin-style-import'
 
 // import.meta.VITE_APP_ENV
 module.exports = {
@@ -9,6 +11,12 @@ module.exports = {
     config.plugins.delete('preload')
     config.plugins.delete('prefetch')
   },
+  plugins: [
+    vue(),
+    styleImport({
+      resolves: [VantResolve()]
+    })
+  ],
   alias: {
     '@': path.resolve(__dirname, './src')
   },
