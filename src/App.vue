@@ -1,16 +1,16 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
 
-  <van-button type="primary">主要按钮</van-button>
-
   <div class="nav-btn">
-    <router-link to="/"> Home</router-link>
+    <router-link to="/"> Home</router-link> &nbsp;
     <router-link to="/contact">Contact </router-link>
   </div>
 
   <router-view></router-view>
 
   <HelloWorld msg="Hello Vue 3.0 + Vite" />
+
+  <van-button type="primary">vant按钮示例</van-button>
 </template>
 
 <script>

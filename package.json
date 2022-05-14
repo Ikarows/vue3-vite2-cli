@@ -28,7 +28,7 @@
     "qs": "^6.10.3",
     "sass-loader": "^12.6.0",
     "vant": "^3.4.9",
-    "vite": "^2.9.9",
+    "vite": "^1.0.0-rc.13",
     "vite-plugin-style-import": "^1.4.1",
     "vue-router": "^4.0.13",
     "vuex": "^4.0.2"
