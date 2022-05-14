@@ -1,5 +1,5 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <img alt="Vue logo" src="/@/assets/logo.png" />
 
   <div class="nav-btn">
     <router-link to="/"> Home</router-link> &nbsp;

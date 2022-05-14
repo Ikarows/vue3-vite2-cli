@@ -17,10 +17,8 @@ module.exports = {
       resolves: [VantResolve()]
     })
   ],
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src')
-    }
+  alias: {
+    '/@/': path.resolve(__dirname, './src')
   },
   hostname: 'localhost', // 默认是 localhost
   port: '3000', // 默认是 3000 端口
