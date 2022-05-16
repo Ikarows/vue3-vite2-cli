@@ -1,9 +1,10 @@
-import {createStore} from 'vuex'
+import { createStore } from 'vuex'
 
 export default createStore({
   //数据存储属性
   state: {
-    num: 0
+    num: 0,
+    token: ''
   },
   //方法属性
   mutations: {
@@ -13,7 +14,7 @@ export default createStore({
   },
   //异步属性
   actions: {
-    actAddNum({commit}, params) {
+    actAddNum({ commit }, params) {
       setTimeout(() => {
         commit('ADDNUM', params)
       }, 1000)
