@@ -15,12 +15,12 @@ const router = createRouter({
     },
     {
       path: '/home',
-      component: () => import('/@/views/Home.vue'),
+      component: () => import('@/views/Home.vue'),
       meta: { title: 'home' }
     },
     {
       path: '/contact',
-      component: () => import('/@/views/Contact.vue'),
+      component: () => import('@/views/Contact.vue'),
       meta: { title: 'Contact' }
     }
   ]
