@@ -1,0 +1,51 @@
+'use strict'
+
+/**
+ * scp2 代码自动化部署
+ * @export
+ * @params { npm run upload -- dev } 上传dist文件夹到测试环境
+ * @params { npm run upload -- pro } 上传dist文件夹到正式环境
+ * @params { npm run deploy -- dev } 打包并上传到测试环境（常用）
+ * @params { npm run deploy -- pro } 打包并上传到正式环境（常用）
+ */
+
+require('colors')
+
+// 引入scp2
+var client = require('scp2')
+
+console.log('正在发布到服务器...'.green)
+
+const ENV = process.argv.splice(2)[0] // 获取对应环境参数
+
+const serve = {
+  dev: {
+    // 本地打包文件的位置
+    host: '', // 服务器的IP地址
+    port: '22', // 服务器端口， 一般为 22
+    username: '', // 用户名
+    password: '', // 密码
+    // privateKey: require('fs').readFileSync('D:\\key.ppk'),
+    passphrase: 'private_key_password',
+    path: '/www/wwwroot/online/gf_extinguisher/src/admin/public' // 项目部署的服务器目标位置
+  },
+  pro: {
+    // 本地打包文件的位置
+    host: '', // 服务器的IP地址
+    port: '22', // 服务器端口， 一般为 22
+    username: '', // 用户名
+    password: '', // 密码
+    // privateKey: require('fs').readFileSync('D:\\key.ppk'),
+    passphrase: 'private_key_password',
+    path: '/www/wwwroot/online/gf_extinguisher/src/admin/public' // 项目部署的服务器目标位置
+  }
+}
+
+client.scp('./dist/', serve[ENV], err => {
+  if (!err) {
+    console.log(`项目发布${ENV}环境完毕!`.green)
+  } else {
+    console.log('err', err)
+    console.log('发布失败!'.red)
+  }
+})
