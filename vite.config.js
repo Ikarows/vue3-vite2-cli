@@ -25,6 +25,13 @@ export default defineConfig({
       ]
     })
   ],
+  /*css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "@/assets/style/main.scss";',
+      },
+    },
+  },*/
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')
@@ -35,6 +42,14 @@ export default defineConfig({
     minify: 'esbuild',
     assetsDir: 'public',
     outDir: `dist`
+
+    //去除 console debugger
+    /*terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },*/
   },
   server: {
     // 是否自动在浏览器打开
