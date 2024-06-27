@@ -48,7 +48,7 @@ git clone https://github.com/Ikarows/vue3-vite2-cli.git
 - Vant3
 - VueRouter
 - Axios
-- Vuex
+- Pinia
 - Eslint
 - Sass
 
@@ -89,7 +89,7 @@ npm run lint
 │   │   └── request.js # 请求封装(get，post)
 │   ├── views          # 页面目录
 │   ├── router         # 路由目录
-│   ├── store          # Vuex 目录
+│   ├── store          # Pinia 目录
 │   ├── utils          # 公用方法目录
 │   ├── App.vue        # vue 根文件
 │   └── main.js        # vue 入口js

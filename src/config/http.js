@@ -4,7 +4,10 @@
  */
 import axios from 'axios'
 import router from '../router'
-import store from '../store'
+import pinia from '@/store/index'
+import { useCommonStore } from '@/store/common'
+const store = useCommonStore(pinia)
+
 
 // 请求超时时间
 axios.defaults.timeout = 10000 // 10s
@@ -17,7 +20,7 @@ axios.interceptors.request.use(
   config => {
     // 每次发送请求之前判断是否存在token，如果存在，则统一在http请求的header都加上token，不用每次请求都手动添加了
     // 即使本地存在token，也有可能token是过期的，所以在响应拦截器中要对返回状态进行判断
-    const token = store.state.index.token
+    const token = store.token
     token && (config.headers.Authorization = token)
     return config
   },
